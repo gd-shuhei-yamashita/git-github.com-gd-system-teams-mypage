@@ -1,0 +1,29 @@
+/**
+ * print.css印刷用レイアウト  
+ */
+
+.sidenav {
+  display: none !important;  
+}
+
+.sidenav-trigger {
+  display: none !important;  
+}
+
+.browser_margin {
+  display: none !important;  
+}
+
+#btn_printout {
+  display: none !important;  
+}
+
+header, main, footer {
+  padding-left: 0px !important;
+}
+
+@media print {
+  .btn_display {
+    display: none;
+  }
+}

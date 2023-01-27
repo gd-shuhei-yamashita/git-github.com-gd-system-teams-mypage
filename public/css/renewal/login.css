@@ -1,0 +1,691 @@
+/* =============================================
+ *
+ * ログインページ CSS
+ *
+ * =========================================== */
+
+.logo {
+  width: 30%;
+  margin: 0 auto;
+}
+
+
+.form-area {
+  width: 100%;
+  background-color: #fff;
+  border: 3px #e6e6e6 solid;
+  border-radius: 5px;
+}
+
+.l-main.login-box {
+  margin-top: 40px;
+}
+
+.form-area a {
+  text-align: center;
+  display: block;
+  font-weight: 600;
+}
+
+.form-area form {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.input-field-text {
+  padding: 0 0 25px 0;
+}
+
+.input-field {
+  padding: 30px 0;
+  text-align: left;
+}
+
+.input-field.txtlink {
+  line-height: 200%;
+  border-bottom: 1px solid #cccccc;
+}
+
+.input-field p.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.input-field label.service {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.input-field label.service:before {
+  content: '■';
+}
+
+.input-field a.link-list {
+  padding-left: 20px;
+  text-decoration: underline;
+}
+
+.input-field a.link-list:hover {
+  text-decoration: underline;
+  color: #e6002d;
+}
+
+.input-field a.link-list:before {
+  content: "";
+  position: absolute;
+  margin: 14px -20px;
+  width: 7px;
+  height: 7px;
+  border-bottom: #e6002d 1px solid;
+  border-right: #e6002d 1px solid;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.input-field2 {
+  padding: 30px 0 0;
+}
+
+.input-field.login-input {
+  padding-bottom: 10px;
+}
+
+.input-field.short {
+  display: inline-block;
+  width: 245px;
+  margin-right: 4px;
+}
+
+.input-field.short2 {
+  display: inline-block;
+  width: 245px;
+}
+
+.input-field.input-field-link.reminder {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.input-field.input-field-link.reminder:hover {
+  opacity: 0.8;
+}
+
+.input-field.input-field-link.reminder p {
+  line-height: 50px;
+}
+
+.input-field.input-field-link.reminder p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.input-field.input-field-link.faq {
+  border: none;
+  background-color: #211816;
+  color: #fff;
+  min-width: 320px;
+  width: 50%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  padding: 0;
+  margin: 30px auto;
+  font-weight: 600;
+}
+
+.input-field.input-field-link.faq:hover {
+  opacity: 0.8;
+}
+
+.input-field.input-field-link.faq p {
+  line-height: 50px;
+}
+
+.input-field.input-field-link.faq p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.input-field-link a {
+  margin: 0 auto;
+  border-bottom: none;
+  width: fit-content;
+}
+
+.help-block {
+  margin-top: 10px;
+  text-align: center;
+}
+.help-block+.help-block {
+  margin-top: 2px;
+}
+
+.form-area label {
+  display: grid;
+}
+
+.form-area label p {
+  border-left: 3px solid #e6002d;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.form-area label input {
+  background-color: #fff;
+  border: 3px #e6e6e6 solid;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.form-area button {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 100%;
+  padding: 10px;
+}
+
+.form-area button:hover {
+  opacity: 0.8;
+}
+
+.form-area button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.input-field.flogin button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+
+/* jQuery confirm
+====================================================*/
+.jconfirm .jconfirm-box {
+  width: 90%;
+  max-width: 1000px;
+}
+
+.jconfirm-title {
+  text-align: center;
+  width: 100%;
+  line-height: 1.2em;
+}
+
+.confirm-area {
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  min-height: 250px;
+  /* max-width: 1000px;
+  margin: auto; */
+  width: 100%;
+}
+
+.confirm-area .input-field + .input-field {
+  padding-top: 0;
+}
+.confirm-area .input-field input,
+.confirm-area .input-field select {
+  border: none;
+}
+
+.confirm-area a {
+  text-align: center;
+  display: block;
+}
+
+.confirm-area form {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.attention {
+  color: #696969;
+  font-size: 70%;
+}
+
+.birthdayUnit {
+  position: relative;
+  left: -5px;
+}
+
+.confirm-area button:disabled {
+  opacity: 1;
+  cursor: progress;
+}
+
+.confirm-area button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.confirm-area-message,
+.confirm-area-contact,
+.confirm-area-buttons {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  min-height: 35px;
+}
+
+.confirm-area-message.disabled,
+.confirm-area-contact.disabled,
+.confirm-area-buttons.disabled {
+    display: none;
+}
+
+.confirm-area-contact,
+.confirm-area-contact:hover,
+.confirm-area-contact:visited {
+  display: block;
+  text-decoration: underline;
+}
+
+.confirm-area-message {
+  display: none;
+  margin: 10px auto 0;
+  font-weight: bolder;
+  position: relative;
+  line-height: 20px;
+  width: fit-content;
+}
+
+.confirm-area-message.error {
+  color: #e6002d;
+  display: block;
+  padding: 7px 0 0 40px;
+}
+
+.confirm-area-message.success {
+  color: #30c0b4;
+  display: block;
+  padding: 7px 0 0 40px;
+}
+
+.confirm-area-message-icon {
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.error .confirm-area-message-icon {
+  background-color: #e6002d;
+}
+
+.success .confirm-area-message-icon {
+  background-color: #30c0b4;
+}
+
+.confirm-area-message-icon:before,
+.confirm-area-message-icon:after {
+  content: '';
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: center;
+  height: 0;
+  width: 0;
+}
+
+.confirm-area-message-icon:after {
+  transform: rotate(-45deg);
+}
+
+.error .confirm-area-message-icon:before,
+.error .confirm-area-message-icon:after {
+  top: 14px;
+  left: 6px;
+  height: 2px;
+  width: 18px;
+}
+
+.success .confirm-area-message-icon:before,
+.success .confirm-area-message-icon:after {
+  top: 16px;
+  left: 4px;
+  height: 2px;
+  width: 10px;
+}
+
+.success .confirm-area-message-icon:after {
+  width: 16px;
+  top: 15px;
+  left: 10px;
+}
+
+/* 純正ボタンを消してカスタムボタンを配置 */
+.jconfirm-type-password-remider .jconfirm-buttons {
+  display: none;
+}
+
+
+.confirm-area-buttons button {
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 10px 5px;
+  text-align: center;
+  min-width: 94px;
+  cursor: pointer;
+}
+
+.confirm-area-buttons-submit {
+  width: 400px;
+  background-color: #e6002d;
+  color: #fff;
+}
+
+.confirm-area-buttons-submit:disabled {
+  opacity: 0.7;
+}
+
+.confirm-area-buttons-cancel {
+  background-color: #ecf0f1;
+}
+
+.confirm-area-buttons-submit:hover,
+.confirm-area-buttons-cancel:hover {
+  opacity: 0.8;
+}
+
+.confirm-area-buttons-submit:disabled {
+  opacity: 1;
+  cursor: progress;
+}
+
+
+/* SMS送信完了モーダル　layer_board
+====================================================*/
+.reminderComplete {
+    padding: 50px 0 50px;
+    width: 900px;
+    height: fit-content;
+    max-height: 80vh;
+}
+
+.reminderComplete__title,
+.reminderComplete__body,
+.reminderComplete__footer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.reminderComplete__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.reminderComplete__title__icon {
+  display: block;
+    width: 110px;
+    margin: 0 auto 20px;
+}
+
+.reminderComplete__title__text {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+.reminderComplete__title__text {
+  font-weight: 600;
+}
+.reminderComplete__title__text.checked {
+  padding-left: 40px;
+}
+
+.reminderComplete__title__text.checked::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    width: 21px;
+    height: 14px;
+    border-left: 2px solid #30c0b4;
+    border-bottom: 2px solid #30c0b4;
+    transform: rotate(-45deg);
+}
+
+.reminderComplete__body {
+    background-color: #efefef;
+    padding: 30px 20px 30px 80px;
+    position: relative;
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.reminderComplete__body--attention {
+  background-color: #faedec;
+}
+
+.reminderComplete__body__icon {
+    position: absolute;
+    top: 32px;
+    left: 20px;
+    width: 40px;
+}
+
+/* .reminderComplete__body__text {
+
+} */
+
+.reminderComplete__footer__button {
+  background-color: #D02D36;
+  margin: 0 0 0 auto;
+  position: relative;
+  width: 120px;
+  padding: 10px 15px 10px 30px;
+}
+
+.reminderComplete__footer__button::before {
+    content: "";
+    background: url('/img/batsu.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 11px;
+    left: 24px;
+    width: 15px;
+    height: 15px;
+}
+
+.csInfo {
+  background-color: #fff;
+  padding: 20px 0 20px 0;
+  margin: 20px auto;
+}
+
+.csInfoContents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.csInfoContents__icon {
+  width: 80px;
+  margin-right: 20px;
+}
+
+.csInfoContents__number {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 4rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.csInfoContents__receptionTime {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 5px auto 0;
+}
+
+/* SP版
+====================================================*/
+@media screen and (max-width: 767px) {
+  .main {
+    margin-bottom: 50px;
+  }
+  .logo {
+    width: 80%;
+    max-width: 300px;
+  }
+  .input-field.input-field-link.faq {
+    border: none;
+    background-color: #211816;
+    color: #fff;
+    min-width: unset;
+    width: 90%;
+    max-width: 320px;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    border-radius: 30px;
+    padding: 0;
+    margin: 30px auto;
+    font-weight: 600;
+  }
+  .input-field button {
+    line-height: normal;
+  }
+
+  /* --- jQuery confirm --- */
+  .jconfirm-title {
+    text-align: left;
+    width: 100%;
+  }
+
+  .confirm-area form {
+    width: 90%;
+  }
+
+  .confirm-area button {
+    width: 100%;
+  }
+
+  .confirm-area .contact {
+    text-align: left;
+  }
+
+  .confirm-area-message,
+  .confirm-area-contact {
+      display: block;
+      margin: 16px auto 0;
+      text-align: left;
+      width: fit-content;
+  }
+
+  .confirm-area-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .confirm-area-buttons-submit {
+    width: 60%;
+  }
+
+  .confirm-area-buttons-cancel {
+    width: 38%;
+  }
+
+
+  /* --- SMS送信完了モーダル　layer_board--- */
+  .reminderComplete__title {
+    font-size: min(5vw, 24px);
+  }
+  .reminderComplete__title__text.checked {
+    padding-left: 10vw;
+  }
+  .reminderComplete__title__text.checked::before {
+    top: 0px;
+    left: 1vw;
+    width: 6vw;
+    height: 4vw;
+  }
+  .reminderComplete__body {
+    padding: 5vw 4vw;
+    margin: 0 auto 7vw;
+    font-size: min(4vw, 20px);
+    line-height: 7vw;
+  }
+  .reminderComplete__body__icon  {
+    top: 6vw;
+    left: 3vw;
+    width: 8vw;
+  }
+  .reminderComplete__body__text {
+    padding-left: 9vw;
+    line-height: 8vw;
+  }
+  .reminderComplete__footer .reminderComplete__footer__button {
+    background-color: #D02D36;
+    margin: 0 0 0 auto;
+    position: relative;
+    width: 40vw;
+    max-width: 160px;
+    padding: 10px 15px 10px 30px;
+  }
+
+  .csInfo {
+    padding: 3vw;
+    margin: 5vw auto;
+  }
+  .csInfoContents {
+    justify-content: space-around;
+  }
+  .csInfoContents__icon {
+    /* padding-right: 10px; */
+    width: 14vw;
+    margin-right: 2vw;
+  }
+  .csInfoContents__number {
+    font-size: 150%;
+  }
+  .csInfoContents__receptionTime {
+    font-size: 3.9vw;
+    margin: 2vw auto;
+    line-height: 5vw;
+  }
+}

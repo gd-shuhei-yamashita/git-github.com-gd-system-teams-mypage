@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* ========================================
+  pc/sp 共通  reset.css
+======================================== */
+
+/* ----------------------------------------
+  reset
+---------------------------------------- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html, body {
+  line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6, table, input, textarea, small {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+button, input, select, textarea {
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* ----------------------------------------
+  base
+---------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'Helvetica', 'Arial', 'sans-serif';
+  color: #211816;
+  font-weight: normal;
+  background-color: #FFF;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: #211816;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:visited {
+	color: #211816;
+}
+a:link {
+	color: #211816;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+:focus {
+  outline: none;
+}
+
+sup {
+  vertical-align: super;
+}
+
+/*  utility
+---------------------------------------- */
+@media screen and (max-width: 767px) {
+	.u-sp {
+		display: block;
+	}
+	.u-pc {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) {
+  .u-sp {
+    display: none;
+	}
+  .u-pc {
+    display: block;
+	}
+}
+
+/*  margin
+---------------------------------------- */
+.mt0 {
+	margin-top: 0 !important;
+}

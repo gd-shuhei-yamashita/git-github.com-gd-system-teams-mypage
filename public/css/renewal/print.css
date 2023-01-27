@@ -1,0 +1,26 @@
+/**
+ * print.css　印刷用レイアウト
+ */
+#btn_printout {
+  display: none !important;
+}
+@media print {
+  iframe,
+  header,
+  .btn_display,
+  .sidenav,
+  .sidenav-trigger,
+  .browser_margin,
+  .pagetop_btn {
+    display: none !important;
+  }
+  body {
+    padding-top: 0 !important;
+    position: relative;
+    top: -30px;
+    height: fit-content !important;
+  }
+  header, main, footer {
+    padding-left: 0px !important;
+  }
+}

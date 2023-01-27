@@ -1,0 +1,21 @@
+.main-warning {
+  display: none;
+}
+
+/* サイドメニューの調整 */
+.nohover {
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.list-child {
+    width: 80%;
+    height: 35px;
+    padding: 0 0 0 65px;
+    display: flex;
+    align-items: center;
+}
+
+.list-child > a:hover {
+  opacity: 0.7;
+}

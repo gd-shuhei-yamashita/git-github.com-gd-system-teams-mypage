@@ -1,0 +1,46 @@
+/* =============================================
+ *
+ * 解約画面 CSS
+ *
+ * =========================================== */
+
+
+/* 
+====================================================*/
+
+/* --- 解約進捗フラグ --- */
+
+.procedure_red {
+  background-color: #d02d36;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.procedure_blue {
+  background-color: #3e7bd6;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.procedure_black {
+  background-color: #222;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.section.data_request {
+  margin-bottom: 30px;
+  color: #e6002d;
+}

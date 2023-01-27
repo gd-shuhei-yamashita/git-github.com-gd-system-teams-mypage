@@ -1,0 +1,111 @@
+/* =============================================
+ *
+ * 請求詳細画面 CSS
+ *
+ * =========================================== */
+
+.l-main .title {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: left;
+}
+
+.l-main .title > a {
+  margin-right: 6px;
+}
+
+.detail {
+  display: flex;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.detail-area {
+  width: 48%;
+  position: relative;
+}
+
+.detail-area .border {
+  margin: 20px 0;
+}
+
+.detail-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.detail-area-1 {
+  margin-right: 4%;
+}
+
+.detail-area dl {
+  overflow: hidden;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-area dl dt {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  border-bottom: 1px solid #cccccc;
+  font-weight: bold;
+}
+
+.detail-area dl dd {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 60px;
+  border-bottom: 1px solid #cccccc;
+  word-break: break-word;
+}
+
+.link-btn.link-btn-detail {
+  margin: 50px auto 100px;
+  text-align: center;
+}
+
+.note {
+  margin-left: 5px;
+}
+
+
+/* SP版
+====================================================*/
+@media screen and (max-width: 767px) {
+  .l-main .title {
+    margin-bottom: 40px;
+  }
+
+  .detail {
+    display: block;
+  }
+
+  .detail-area {
+    width: 100%;
+    margin: 0;
+  }
+
+  .detail-area-2 {
+    margin-top: 80px;
+  }
+}
+
+/* 印刷用
+====================================================*/
+@media print {
+  .detail-area dl dt,
+  .detail-area dl dd {
+    height: 53px !important;
+  }
+  footer {
+    margin-top: 0 !important;
+  }
+  footer p {
+    padding: 20px 0 0 !important;
+  }
+
+}

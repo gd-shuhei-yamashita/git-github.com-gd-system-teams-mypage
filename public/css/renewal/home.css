@@ -1,0 +1,402 @@
+/* =============================================
+ *
+ * ホーム画面 CSS
+ *
+ * =========================================== */
+
+
+/* 各種お知らせ
+====================================================*/
+.news-pc {
+  width: 100%;
+  min-width: 600px;
+  background-color: #cccccc;
+  padding: 20px 0;
+}
+
+.news-sp {
+  display: none;
+}
+
+.news-area {
+  width: 70%;
+  min-width: 600px;
+  margin: 0 auto;
+  background-color: #cccccc;
+  display: table;
+  table-layout: fixed;
+}
+
+.news-area p {
+  display: table-caption;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.news-area-ttl {
+  margin-top: 25px;
+}
+
+.news-area ul {
+  width: 80%;
+  display: table-cell;
+}
+
+.news-area li {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+.news-area li span {
+  margin-right: 10px;
+}
+
+.news-area li a {
+  border-bottom: 1px solid #696969;
+}
+
+.news-area li a:hover {
+  opacity: 0.5;
+}
+
+.news-area li a[href="#"] {
+  pointer-events: none;
+}
+
+.news-area img {
+  width: 20px;
+  display: inline-table;
+  vertical-align: middle;
+}
+
+.news-link {
+  font-size: 1.4rem;
+  padding: 20px;
+  border-left: 1px solid #333;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.news-link a {
+  border-bottom: 1px solid;
+}
+
+.news-link a:hover {
+  opacity: 0.5;
+}
+
+.news-link i {
+  font-size: 18px;
+  position: absolute;
+  margin-left: 5px;
+  top: 1px;
+}
+
+/* ホーム
+====================================================*/
+
+/* --- wifi配送情報 --- */
+.home table.home_delivery {
+  margin: 10px 0 10px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.home table.home_delivery .amount {
+  vertical-align: middle;
+  text-align: right;
+}
+
+.home table.home_delivery tr th:nth-child(1) {
+  background-color: #e6e6e6;
+  width: 35%;
+  border-right: none;
+}
+
+.home_delivery p {
+  text-align: right;
+}
+
+.warning_box {
+  margin-bottom: 40px;
+}
+
+.warning_box > .warning {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+a.change_date {
+  font-size: 1.4rem;
+  color: #d02d36;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+/* --- 月の切り替え --- */
+.home-use {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.home-use #claim {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+.home-use #claim {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.other-month a {
+  display: inline;
+  vertical-align: middle;
+  width: 60px;
+  color: #696969;
+  border-bottom: 1px transparent solid;
+  pointer-events: none;
+}
+
+.other-month a.active {
+  border-color: #696969;
+  pointer-events: initial;
+}
+
+.other-month img {
+  width: 25px;
+  display: inline;
+  vertical-align: middle;
+}
+
+/* --- 合計請求 --- */
+.total-table {
+  margin: 10px 0 30px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.total-table th {
+  width: 50%;
+}
+
+.total-table td {
+  font-weight: bold;
+  border-left: none;
+}
+
+/* --- サービス毎の請求 --- */
+.service-table {
+  margin: 10px 0 30px 0;
+  font-size: 100%;
+  line-height: 2.0rem;
+}
+
+.service-table th {
+  width: 45%;
+  padding-left: 45px;
+}
+
+.service-icon {
+  color: #d02d36;
+  margin-right: 20px;
+  font-size: 2.2rem;
+  position: absolute;
+  left: 10px;
+  top: 34%;
+}
+
+.service-table img {
+  height: 22px;
+  width: auto;
+}
+
+.service-table .t_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-table .link-btn button {
+  width: 100px;
+  padding-left: 15px;
+  margin-left: 15px;
+}
+
+.service-table .link-btn i {
+  font-size: 18px;
+  position: relative;
+  top: 1px;
+  margin-left: 4px;
+}
+
+/* ご案内
+====================================================*/
+.invitation {
+  margin-top: 60px;
+}
+.invitation-contents + .invitation-contents{
+  margin-top: 50px;
+}
+
+.banner img {
+  min-height: 144px;
+  background-color: #f3f3f3;
+  transition: height .2s ease;
+}
+
+.bannerbox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.banner {
+  margin-top: 30px;
+  text-align: center;
+  line-height: 4rem;
+  font-weight: bold;
+  width: 48%;
+}
+
+.banner a {
+  font-size: 95%;
+}
+
+.banner a:hover {
+  opacity: 0.8;
+}
+
+
+/* SP版
+====================================================*/
+@media screen and (max-width: 767px) {
+
+  /* --- home --- */
+  .in {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .home-use #month,
+  .home-use #money {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    font-size: 2rem;
+    margin: 30px 10px;
+  }
+
+  .home-use .link-btn {
+    text-align: center;
+  }
+
+  .service-table .t_flex {
+    display: block;
+    text-align: right;
+  }
+
+  .service-icon {
+    top: 40%;
+  }
+
+  .total-table th {
+    width: 45%;
+  }
+
+  .news-pc {
+    display: none;
+  }
+
+  .news-sp {
+    display: block;
+    width: 90%;
+    margin: 100px auto;
+    min-width: 300px;
+    border-top: 2.5px solid #cccccc;
+    position: relative;
+  }
+
+  .h2-border-home2 {
+    position: absolute;
+    border-bottom: 2.5px solid #e6002d;
+    top: -3px;
+    width: 20%;
+    z-index: 5;
+  }
+
+  .news-area {
+    background-color: #fff;
+    display: contents;
+  }
+
+  .news-area-ttl {
+    display: table;
+    width: 100%;
+  }
+
+  .news-area p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .news-link {
+    border: none;
+    display: table-cell;
+    text-align: right;
+    padding-right: 0;
+    color: #696969;
+  }
+
+  .news-link i {
+    font-size: 18px;
+    position: relative;
+    margin-left: 4px;
+    top: 2px;
+  }
+
+  .news-area li {
+    font-size: 1.5rem;
+    line-height: 22px;
+    font-weight: bold;
+    color: #696969;
+  }
+
+  .news-area li a {
+    width: 100%;
+    color: #696969;
+  }
+
+
+  .banner {
+    width: 100%;
+  }
+
+
+  /* --- ホーム詳細  --- */
+
+  .detail {
+    display: block;
+    position: relative;
+  }
+
+  .detail-area {
+    width: 100%;
+  }
+
+  .detail-area-1,
+  .detail-area-2 {
+    margin-right: 0;
+  }
+
+  .detail-area-2 {
+    margin-top: 80px;
+  }
+
+}

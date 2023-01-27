@@ -1,0 +1,124 @@
+.container{
+  width: 90%;
+}
+/** jquery-confirmの幅 メディアに応じる */
+@media (max-width: 599px) {
+  .jc-bs3-container {
+    width:90% !important;
+  }
+}
+@media (min-width: 600px) {
+  .jc-bs3-container {
+    width:50% !important;
+  }
+}
+
+.myBtn {
+  width: 140px;
+}
+.underbar{
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+.pdfBtn{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.card .card-title {
+  font-size: 15px;
+}
+.collapsible > li > .row{
+  margin-bottom: 0px;
+}
+.controlle_1{
+  padding: 24px;
+}
+.controlle_2{
+  max-height: 50%;
+  font-size: 18px;
+}
+.modalBtn {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+#login-info {
+  margin-bottom: 0px;
+}
+
+.item-list__bottom-adjust > .row {
+  margin-bottom: 0px;
+}
+.unit-label{
+  margin-left: 5px;
+}
+.item-list__brackets--open::before{
+  content:"("; 
+}
+.item-list__brackets--close::after{
+  content: ")";
+}
+.item-list__row-flex {
+  display: flex;
+}
+.item-list__flex-end {
+  align-self: flex-end;
+  margin-bottom: 0px;
+}
+.card .card-title {
+  font-size: 15px;
+}
+.item-list__select-width {
+  width: 50%;
+}
+ul, li, label{
+    color: #26a69a;
+}
+
+.cursor_pointer {
+  cursor : pointer;
+}
+
+/**
+ * footerをウィンドウ下部に固定 公式は Sticky Footer項目 / ex. Materialize footer not going to bottom of page  
+ * https://materializecss.com/footer.html / https://stackoverflow.com/questions/33862855/materialize-footer-not-going-to-bottom-of-page
+ */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+
+/**
+ * maintainance mode
+ */
+
+.error-wrap {
+  margin: auto;
+  padding: 5px 20px;
+
+}
+.error-wrap h1 { font-size: 18px; }
+.error-wrap p { margin-left: 10px; font-size: 12px; }
+
+/**
+ * table stripe をわかりやすく
+ */
+table.striped tr:nth-child(even) {
+  line-height: 1.1;
+  background-color: #EEEEEE;
+}
+
+@media (min-width : 600px) {
+  .visible_sml {
+    display: none;
+  }
+}
+
+@media (max-width : 600px) {
+  .invisible_sml {
+    display: none;
+  }
+}

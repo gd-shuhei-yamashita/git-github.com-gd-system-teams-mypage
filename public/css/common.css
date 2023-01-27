@@ -1,0 +1,100 @@
+
+/* サイドバー展開時挙動の追加 ex. https://qiita.com/DaichiSaito/items/1fcf8258e073a21c7f88 */
+.sidenav .collapsible>.active .collapsible-header .chevron {
+    transform: rotate(-90deg);
+}
+
+/* サイドバー強調の色を変更する  #ffecb3 amber lighten-4 / #ffc107 amber / #eeeeee grey lighten-3 */
+.sidenav .collapsible-body>ul:not(.collapsible)>li.active, .sidenav.sidenav-fixed .collapsible-body>ul:not(.collapsible)>li.active {
+  background-color: #ffecb3 !important;
+}
+.sidenav .collapsible-body>ul:not(.collapsible)>li.active a, .sidenav.sidenav-fixed .collapsible-body>ul:not(.collapsible)>li.active a {
+  color: #000;
+  font-weight:bold;
+}
+
+/* サイドバー区切り線 */
+.sidenav .collapsible-body>ul:not(.collapsible)>li {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  transition: background-color .2s;
+}
+
+/** 各画面のタイトル表示 brand-logo スマートフォン表示時 */
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 15%;
+    -webkit-transform: translateX(-0%);
+    transform: translateX(-0%);
+  }
+  /** サイドバー表示ボタン */
+  nav .sidenav-trigger {
+    margin: 0 0px;
+  }
+
+}
+
+/** ページング、アクティブ */
+.pagination li.active {
+  background-color: #fb8c00;
+}
+
+/**
+ * searchclear 検索フォームの入力項目へのクリアボタン
+ * 用例 <div class="input-field..."><input ...><i class="material-icons searchclear ">clear</i></div>
+ */
+.searchclear {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  height: 14px;
+  margin: 14px; /** auto */
+  font-size: 14px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+/**
+ * toggle-password パスワード入力フォームのパスワード表示許可の目アイコン
+ * 用例 <div class="input-field..."><input ...><i class="material-icons toggle-password ">visibility</i></div>
+ */
+.toggle-password {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  height: 14px;
+  margin: 14px; /** auto */
+  font-size: 14px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+/**
+ * form_icon 日付入力項目のボタン
+ * 用例 <div class="input-field..."><input ...><i class="material-icons datepicker_icon ">calendar_today</i></div>
+ */
+.form_icon {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  height: 20px;
+  margin: auto;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+/**
+ * サイドバー対応、 ログイン時 - スタイル追記 画面左インデント幅 の切り替え
+ */
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}

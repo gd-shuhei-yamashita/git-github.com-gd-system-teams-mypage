@@ -1,0 +1,468 @@
+/* =============================================
+ *
+ * 請求詳細画面 CSS
+ *
+ * =========================================== */
+
+
+/* 使用量・請求金額
+====================================================*/
+
+.cp_ipselect {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 2rem 0 0;
+  text-align: center;
+}
+
+#supplypoint_code {
+  height: 40px;
+}
+
+.cp_ipselect select {
+  width: 100%;
+  height: 40px;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.5rem;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl02 {
+  position: relative;
+  background: #fff;
+}
+
+.cp_ipselect.cp_sl02::before {
+  position: absolute;
+  top: 50%;
+  right: 0.7em;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  content: "";
+  border-bottom: #333 2px solid;
+  border-right: #333 2px solid;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cp_ipselect.cp_sl02:after {
+  position: absolute;
+  pointer-events: none;
+  width: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  border-radius: 0 5px 5px 0;
+  background-color: #cccccc;
+}
+
+.cp_ipselect.cp_sl02 select {
+  padding: 8px 38px 8px 8px;
+  color: #333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.use-area {
+  margin-bottom: 60px;
+}
+
+.use-area > h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.use1 {
+  width: 47.5%;
+}
+
+.use-plan {
+  width: 100%;
+}
+
+.use-result {
+  width: 100%;
+  display: flex;
+}
+
+.use-result .result-name {
+  margin: auto 10px auto 0;
+}
+
+#get_contract_name,
+#get_plan {
+  margin-left: 7px;
+  font-size: 1.5rem;
+}
+
+.use-area .use1 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use4 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use5 {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.use-area .use5 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use1 .auto1,
+.use1 .auto2 {
+  height: 40px;
+  border-radius: 5px;
+  padding: 13px 0 8px 0;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.result-ym {
+  width: 40%;
+}
+
+.result-user {
+  margin: auto 0;
+}
+
+/* --- グラフエリア --- */
+.graph-area {
+  width: 100%;
+  min-height: 340px;
+  margin: 30px auto 70px;
+  text-align: center;
+  transition: opacity .3s ease;
+}
+
+.graph-area.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.graph-area-calendar {
+  display: flex;
+  width: 50%;
+  margin: 20px auto;
+  justify-content: space-around;
+}
+
+.calendar_year {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.calendar_prev,
+.calendar_next{
+  border: none;
+  cursor: pointer;
+}
+
+.calendar_prev.disabled,
+.calendar_next.disabled {
+  pointer-events: none;
+}
+
+.calendar_prev:before,
+.calendar_next:after {
+  content: '';
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-top: 2px solid #111;
+  border-left: 2px solid #111;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+}
+
+.calendar_prev:hover:before,
+.calendar_next:hover:after {
+  opacity: 0.7;
+}
+
+.calendar_prev.disabled:before,
+.calendar_next.disabled:after {
+  border-color: #cccccc;
+}
+
+.calendar_next:after {
+  transform: rotate(135deg);
+  transform-origin: center center;
+}
+
+
+.graph-area-summary {
+  border: #ED93AD 1px solid;
+  width: 50%;
+  margin: 0 auto 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.summary_term {
+  margin: 10px auto;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.summary_report {
+  margin: 10px auto;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.graph-area-switch {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+}
+
+.unit_tab {
+  border: 1px solid #ED93AD;
+  border-radius: 5px;
+  color: #565656;
+  display: inline-block;
+  font-size: 100%;
+  line-height: 100%;
+  padding: 5px;
+  text-align: center;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin: 0 auto 10px;
+}
+
+.unit_tab.active {
+  background-color: #ED93AD;
+  color: #fff;
+}
+
+canvas#myBarChart {
+  display: block;
+  margin: auto;
+  width: 70%;
+  max-height: 340px;
+}
+
+/* --- 請求一覧 --- */
+
+table .date {
+  font-size: 1.3rem;
+}
+
+table .price {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.detail-btn {
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  color: #e6002d;
+  display: inline-block;
+  font-weight: bold;
+  opacity: 0.7;
+  padding: 7px 10px 5px;
+  pointer-events: none;
+  vertical-align: middle;
+  transition: all .3s ease;
+}
+
+.detail-btn:visited,
+.detail-btn:link {
+  color: #e6002d;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.detail-btn:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.plan-btn button {
+  display: block;
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.plan-btn button:hover {
+  color: #fff;
+  border: 1px solid #e6002d;
+  background-color: #e6002d;
+}
+
+.use-area table button {
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.use-area table button:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+  width: 25%;
+  margin-right: 20px;
+}
+
+.status-active {
+  background-color: #3e7bd6;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.status-complete {
+  background-color: #d02d36;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.status-cancel {
+  background-color: #222;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+option:disabled {
+  display: none;
+}
+
+.link-btn.link-btn-detail>p {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.link-btn.link-btn-detail {
+  margin: 50px auto 100px;
+  text-align: center;
+}
+
+/* --- 利用期間を指定して一括出力 --- */
+.use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+    width: 25%;
+    margin-right: 20px;
+}
+
+.use3 div,
+.use3.link-btn.link-btn-detail {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.use3 .cp_ipselect.cp_sl02 {
+    margin: 50px 0;
+}
+
+.use3 .link-btn-detail {
+    margin-bottom: 50px;
+}
+
+/* SP版
+====================================================*/
+@media screen and (max-width: 767px) {
+  .use1 {
+    width: 100%;
+  }
+
+  .graph-area {
+    width: 100%;
+    margin: 30px 0;
+    float: none;
+  }
+
+  table .date {
+    font-size: 1.2rem;
+  }
+
+  table .price,
+  table .btn {
+    font-size: 1.4rem;
+  }
+
+  table .btn {
+    font-size: 1.4rem;
+    width: 17%;
+  }
+
+  .detail-btn {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 40px;
+  }
+
+  .use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+    width: 45%;
+    margin: 30px 2%;
+  }
+
+  .link-btn.link-btn-detail {
+    display: block;
+    text-align: center;
+  }
+
+  .result-ym {
+    width: 80%;
+  }
+
+  .graph-area-calendar {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .calendar_year {
+    position: relative;
+    top: -1px;
+  }
+
+  .graph-area-summary {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,2240 @@
+body {
+  font-size: 1.5rem;
+  height: 100vh;
+  padding-top: 60px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-width: 600px;
+  height: 90px;
+  background-color: #e6e6e6;
+  margin-top: -15px;
+  z-index: 15;
+}
+
+/* ハンバーガー */
+button.burger {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+
+button.burger:hover {
+  cursor: pointer;
+}
+
+/**************** 以下、ハンバーガーボタンのスタイリング ****************/
+.burger {
+  /* ボタンの配置位置  */
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  /* ボタンの大きさ  */
+  width: 48px;
+  height: 48px;
+  /* バーガーの線をボタン範囲の中心に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 最前面に */
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.burger.open {
+  /* ボタンの配置位置  */
+  left: 290px;
+  transition: 0.3s;
+}
+
+/***** 真ん中のバーガー線 *****/
+.btn-line {
+  /* 線の長さと高さ */
+  width: 100%;
+  height: 4px;
+  /* バーガー線の色 */
+  background-color: #333;
+  /* バーガー線の位置基準として設定 */
+  position: relative;
+  transition: 0.2s;
+}
+
+/***** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  /* 基準線と同じ大きさと色 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  transition: 0.2s;
+}
+
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-13px);
+}
+
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(13px);
+}
+
+/***** メニューオープン時 *****/
+.btn-line.open {
+  /* 真ん中の線を透明に */
+  background-color: transparent;
+}
+
+.btn-line.open::before,
+.btn-line.open::after {
+  content: "";
+  transition: 0.2s;
+}
+
+.btn-line.open::before {
+  /* 上の線を傾ける */
+  transform: rotate(45deg);
+}
+
+.btn-line.open::after {
+  /* 上の線を傾ける */
+  transform: rotate(-45deg);
+}
+
+.menu {
+  position: fixed;
+  /* メニューの位置マイナス指定で画面外に */
+  left: -100%;
+  width: 350px;
+  height: 110vh;
+  /* メニューを縦に */
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  padding-top: 80px;
+  background-color: #fff;
+  z-index: 9;
+}
+
+.menu-list {
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-list a {
+  display: contents;
+}
+
+.menu-list img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.menu-list i {
+  width: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.menu-list.line {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px 40px 0;
+  height: 40px;
+  position: relative;
+  border-top: 1px solid #ccc;
+}
+
+/* .menu-list.logout::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: inline-block;
+  width: 80%;
+  height: 1px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #cccccc;
+} */
+
+.menu-list:hover {
+  opacity: 0.5;
+}
+
+/***** メニューオープン時位置0にして画面内に *****/
+.menu.open {
+  position: absolute;
+  left: 0;
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+/**************** ここまで、メニューのスタイリング ****************/
+
+header p {
+  position: fixed;
+  top: 35px;
+  right: 50px;
+}
+
+.l-main {
+  width: 70%;
+  min-width: 600px;
+  margin: 80px auto 30px;
+}
+
+.l-main.login {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.l-main h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.l-main .login img {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.l-main h2 {
+  font-size: 2rem;
+  left: 0;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #cccccc;
+  position: relative;
+}
+
+.l-main .h2-border {
+  position: absolute;
+  border-bottom: 2px solid #e6002d;
+  /* top: 50px; */
+  padding-bottom: 10px;
+  width: 20%;
+  z-index: 5;
+}
+
+.l-main h2 p {
+  padding-bottom: 5px;
+  display: contents;
+}
+
+.l-main.login .h2-border {
+  top: 80px;
+}
+
+.l-main h2 i {
+  padding-right: 10px;
+  color: #d02d36;
+}
+
+.section.red-text {
+  margin: 20px auto;
+}
+
+/* ログインページ */
+
+.form-area {
+  width: 100%;
+  /* height: 570px; */
+  background-color: #fff;
+  border: 3px #e6e6e6 solid;
+  border-radius: 5px;
+}
+
+.l-main.login .form-area {
+  /* height: 540px; */
+}
+
+.l-main.login-box {
+  margin-top: 40px;
+}
+
+.form-area a {
+  text-align: center;
+  display: block;
+  font-weight: 600;
+}
+
+.form-area form {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.input-field-text {
+  padding: 0 0 25px 0;
+}
+
+.input-field {
+  padding: 30px 0;
+  text-align: left;
+}
+
+.input-field.txtlink {
+  line-height: 200%;
+  border-bottom: 1px solid #cccccc;
+}
+
+.input-field p.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.input-field label.service {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.input-field label.service:before {
+  content: '■';
+}
+
+.input-field a.link-list {
+  padding-left: 20px;
+  text-decoration: underline;
+}
+
+.input-field a.link-list:hover {
+  text-decoration: underline;
+  color: #e6002d;
+}
+
+.input-field a.link-list:before {
+  content: "";
+  position: absolute;
+  margin: 14px -20px;
+  width: 7px;
+  height: 7px;
+  border-bottom: #e6002d 1px solid;
+  border-right: #e6002d 1px solid;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.input-field2 {
+  padding: 30px 0 0;
+}
+
+.input-field.login-input {
+  padding-bottom: 10px;
+}
+
+.input-field.short {
+  display: inline-block;
+  width: 245px;
+  margin-right: 4px;
+}
+
+.input-field.short2 {
+  display: inline-block;
+  width: 245px;
+}
+
+.input-field.input-field-link.reminder {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.input-field.input-field-link.reminder:hover {
+  opacity: 0.8;
+}
+
+.input-field.input-field-link.reminder p {
+  line-height: 50px;
+}
+
+.input-field.input-field-link.reminder p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.input-field.input-field-link.faq {
+  border: none;
+  background-color: #211816;
+  color: #fff;
+  width: 50%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  padding: 0;
+  margin: 30px auto;
+  font-weight: 600;
+}
+
+.input-field.input-field-link.faq:hover {
+  opacity: 0.8;
+}
+
+.input-field.input-field-link.faq p {
+  line-height: 50px;
+}
+
+.input-field.input-field-link.faq p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.input-field-link a {
+  margin: 0 auto;
+  border-bottom: none;
+  width: fit-content;
+}
+
+/* .input-field-link a:hover {
+  opacity: 0.5;
+} */
+
+.form-area label {
+  display: grid;
+}
+
+.form-area label p {
+  border-left: 3px solid #e6002d;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.form-area label input {
+  background-color: #fff;
+  border: 3px #e6e6e6 solid;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.form-area button {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 100%;
+}
+
+.form-area button:hover {
+  opacity: 0.8;
+}
+
+.form-area button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.input-field.flogin button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.jconfirm .jconfirm-box {
+  width: 90%;
+}
+
+/* ログイン画面　認証エラー文言 */
+li.help-block.red-text {
+    text-align: center;
+    color: #e6002d;
+    line-height: 2rem;
+}
+
+/* ホーム */
+
+.news-pc {
+  width: 100%;
+  min-width: 600px;
+  background-color: #cccccc;
+  padding: 20px 0;
+}
+
+.news-sp {
+  display: none;
+}
+
+.news-area {
+  width: 70%;
+  min-width: 600px;
+  margin: 0 auto;
+  background-color: #cccccc;
+  display: table;
+  table-layout: fixed;
+}
+
+.news-area p {
+  display: table-caption;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.news-area-ttl {
+  margin-top: 25px;
+}
+
+.news-area ul {
+  width: 80%;
+  display: table-cell;
+}
+
+.news-area li {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+.news-area li span {
+  margin-right: 10px;
+}
+
+.news-area li a {
+  border-bottom: 1px solid #696969;
+}
+
+.news-area li a:hover {
+  opacity: 0.5;
+}
+
+.news-area img {
+  width: 20px;
+  display: inline-table;
+  vertical-align: middle;
+}
+
+.news-link {
+  font-size: 1.4rem;
+  padding: 20px;
+  border-left: 1px solid #333;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.news-link a {
+  border-bottom: 1px solid;
+}
+
+.news-link a:hover {
+  opacity: 0.5;
+}
+
+.link-btn button {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 250px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.link-btn button:hover {
+  opacity: 0.8;
+}
+
+.link-btn button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.link-disable-btn button {
+  border: none;
+  background-color: #696969;
+  color: #fff;
+  width: 250px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.link-disable-btn button:hover {
+  opacity: 0.8;
+}
+
+.home-use {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.home-use #claim {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+/* .home-use button,
+.home-use a {
+  display: table-cell;
+  vertical-align: middle;
+} */
+
+/* .in {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+} */
+
+/* .home-use a {
+  width: 20%;
+} */
+
+.home-use #claim {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+/* .home-use #billing_amount_total {
+  width: 40%;
+} */
+
+/* .home-use .link-btn {
+  text-align: right;
+} */
+
+/* .home-use #month {
+  font-size: 1.2rem;
+} */
+
+/* .home-use #money {
+  font-size: 1.8rem;
+  font-weight: bold;
+} */
+
+/* .other-month {
+  margin: 30px auto;
+  text-align: center;
+} */
+
+.home table {
+  width: 100%;
+  /* font-weight: 600; */
+}
+
+.home table.home_total {
+  margin: 10px 0 30px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.home table.home_total .amount {
+  vertical-align: middle;
+  text-align: right;
+}
+
+.home table.service {
+  margin: 10px 0 30px 0;
+  font-size: 100%;
+  line-height: 2.0rem;
+}
+
+.home table tr th,
+.home table tr td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.home table i {
+  color: #d02d36;
+  margin-right: 20px;
+  font-size: 2.2rem;
+  position: absolute;
+  left: 10px;
+  top: 34%;
+}
+
+.service img {
+  height: 22px;
+  width: auto;
+}
+
+.home table.home_total tr th:nth-child(2) {
+  border-left: none;
+}
+
+.home table.service tr th:nth-child(1),
+.home table.service tr td:nth-child(1) {
+  width: 45%;
+}
+
+.home table tr td:nth-child(1) {
+  padding-left: 45px;
+}
+
+.home table tr th.t_top {
+  border-top: none;
+  text-align: center;
+}
+
+.home table tr td .t_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home table tr .link-btn button {
+  width: 100px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+
+.home table tr .link-btn button img {
+  right: 11px;
+}
+
+.other-month a {
+  display: inline;
+  vertical-align: middle;
+  width: 60px;
+  color: #696969;
+  border-bottom: 1px solid;
+}
+
+.other-month img {
+  width: 25px;
+  display: inline;
+  vertical-align: middle;
+}
+
+/* 請求額詳細 */
+
+h2.h2-detail {
+  border: none;
+}
+
+h2.h2-detail img {
+  width: 30px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.l-main .h2-border.h2-border-detail {
+  top: -1px;
+  width: 10%;
+}
+
+.l-main .h2-border.detail-border1 {
+  top: -12px;
+  left: 0;
+}
+
+/* 修正 */
+.detail {
+  display: flex;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.detail-area {
+  width: 47.5%;
+  border-top: 2px solid #cccccc;
+  padding-top: 20px;
+  position: relative;
+}
+
+.detail-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.detail-area-1,
+.detail-area-2 {
+  margin-right: 2.5%;
+}
+
+.detail-area dl {
+  overflow: hidden;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-area dl dt {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  border-bottom: 1px solid #cccccc;
+  font-weight: bold;
+}
+
+.detail-area dl dd {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 60px;
+  /* padding: 25px 0 0px; */
+  border-bottom: 1px solid #cccccc;
+}
+
+.link-btn.link-btn-detail {
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* .link-btn.link-btn-detail button img {
+  margin-left: 45px;
+} */
+
+/* 使用量・請求金額 */
+
+.cp_ipselect {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 2rem 0 0;
+  text-align: center;
+}
+
+#supplypoint_code {
+  height: 40px;
+}
+
+.cp_ipselect select {
+  width: 100%;
+  height: 40px;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.5rem;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl02 {
+  position: relative;
+  /* border: 1px solid #cccccc;
+  border-radius: 5px; */
+  background: #fff;
+}
+
+.cp_ipselect.cp_sl02::before {
+  position: absolute;
+  top: 50%;
+  right: 0.7em;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  content: "";
+  border-bottom: #333 2px solid;
+  border-right: #333 2px solid;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cp_ipselect.cp_sl02:after {
+  position: absolute;
+  pointer-events: none;
+  width: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* width: 1px; */
+  content: "";
+  /* border-left: 1px solid #cccccc; */
+  border-radius: 0 5px 5px 0;
+  background-color: #cccccc;
+}
+
+.cp_ipselect.cp_sl02 select {
+  padding: 8px 38px 8px 8px;
+  color: #333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.use-area {
+  margin-bottom: 60px;
+}
+
+.use-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+/* .use1 {
+  width: 47.5%;
+  margin: 30px 0;
+  display: inline-block;
+} */
+
+.use1 {
+  width: 47.5%;
+}
+
+.use2,
+.use3 {
+  padding-top: 30px;
+  margin-top: 70px;
+  border-top: 2.5px solid #cccccc;
+  position: relative;
+}
+
+.use2 {
+  padding-top: 30px;
+  margin-top: 340px;
+  border-top: 2.5px solid #cccccc;
+  position: relative;
+}
+
+.use-plan {
+  width: 100%;
+}
+
+.use-result {
+  width: 100%;
+  display: flex;
+}
+
+.use-result .result-name {
+  margin: auto 10px auto 0;
+}
+
+#get_contract_name,
+#get_plan {
+  margin-left: 7px;
+  font-size: 1.5rem;
+}
+
+.use-area .use1 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use4 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use5 {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.use-area .use5 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use1 .auto1,
+.use1 .auto2 {
+  height: 40px;
+  border-radius: 5px;
+  padding: 13px 0 8px 0;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* 時間・日・月選択 */
+
+.graph_status {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.graph_status input[name=tab_graph] {
+  display: none;
+}
+
+.graph_status .tab input:checked+.tab_graph {
+  background-color: #ED93AD;
+  color: #fff;
+}
+
+.graph_status .tab {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.graph_status .tab_graph {
+  width: 30%;
+  border: 1px solid #ED93AD;
+  line-height: 40px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  text-align: center;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+  font-size: 100%;
+  margin: 0 auto;
+}
+
+/* 時間・日・月選択 */
+
+/* 単位タブ */
+
+.unit_status {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.unit_status input[name=tab_unit] {
+  display: none;
+}
+
+.unit_status .tab input:checked+.tab_unit {
+  background-color: #ED93AD;
+  color: #fff;
+}
+
+.unit_status .tab {
+  background-color: #fff;
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.unit_status .tab_unit {
+  /* width: 30%; */
+  padding: 5px 10px;
+  border: 1px solid #ED93AD;
+  /* line-height: 24px; */
+  text-align: center;
+  color: #565656;
+  display: block;
+  text-align: center;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+  font-size: 100%;
+  /* margin: 0 auto; */
+}
+
+/* 単位タブ */
+
+/* 時間・日・月別　期間＋使用量＋請求金額表示 */
+
+.calendar-button {
+  display: flex;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.calendar-button button {
+  border: none;
+  text-decoration: underline;
+  margin: 0 auto;
+}
+
+.calendar-button p {
+  /* margin: 20px 0; */
+}
+
+.summary {
+  border: #ED93AD 1px solid;
+  width: 50%;
+  margin: 0 auto 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.summary p.term {
+  margin: 10px auto;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.summary p.report {
+  margin: 10px auto;
+  font-size: 1.7rem;
+}
+
+.summary p span {
+  width: 400px;
+}
+
+/* 時間・日・月別　期間＋使用量＋請求金額表示 */
+.result-ym {
+  width: 40%;
+}
+
+.result-user {
+  margin: auto 0;
+}
+
+.graph-area {
+  width: 100%;
+  height: 340px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+canvas#myBarChart {
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+
+.l-main .h2-border.use-border2 {
+  top: -13px;
+}
+
+.l-main .h2-border.use-border3 {
+  top: -12px;
+}
+
+.use2 .link-btn.link-btn-detail a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.use2 .table-area {
+  margin-top: 20px;
+  width: 100%;
+  height: 360px;
+  overflow-y: auto;
+  border: 1px solid #cccccc;
+}
+
+.use2 table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.use2 thead th {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 2px solid #cccccc;
+  vertical-align: middle;
+  padding: 0 0 0 40px;
+  width: 25%;
+}
+
+.use2 table tr {
+  height: 60px;
+}
+
+.use2 table td {
+  vertical-align: middle;
+  padding: 0 0 0 40px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.use2 table td.date {
+  font-size: 1.3rem;
+}
+
+.use2 table td.en {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.use2 table button {
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.use2 table button:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.plan-btn button {
+  display: block;
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.plan-btn button:hover {
+  color: #fff;
+  border: 1px solid #e6002d;
+  background-color: #e6002d;
+}
+
+.use-area table button {
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.use-area table button:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+  width: 25%;
+  margin-right: 20px;
+}
+
+.use3 div,
+.use3.link-btn.link-btn-detail {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.use-area .use3 .cp_ipselect.cp_sl02 {
+  margin: 50px 0;
+}
+
+/* お支払い状況 */
+
+.home-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.status-area {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.status-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p.comment {
+  font-weight: normal;
+  font-size: 100%;
+  padding: 10px 0;
+}
+
+.status-plan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-area .use1 {
+  width: 47.5%;
+  margin: 30px 0 0;
+}
+
+.status-area .use1 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.status_month {
+  margin: 10px 0 30px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  border: 1px solid #cccccc;
+}
+
+.status_month .title_month {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+
+.status_month .status_detail {
+  padding: 10px;
+}
+
+.status_month .status_detail ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.status_month .status_detail ul li {
+  display: flex;
+}
+
+.status_month .status_detail ul li p:first-child {
+  padding-right: 10px;
+}
+
+.status_month .status_detail .amount {
+  font-weight: 600;
+  border-bottom: 1px solid #222;
+}
+
+.status_month .status_detail .price {
+  padding-left: 20px;
+}
+
+.status_detail .link-btn {
+  text-align: right;
+}
+
+.status_detail .link-btn button {
+  width: 100px;
+  padding-right: 15px;
+}
+
+
+
+/* 支払い状況フラグ */
+.status_flag {
+  font-size: 12px;
+  text-align: center;
+  line-height: normal;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 5px 10px;
+  line-height: initial;
+}
+
+.status_flag .paid {
+  color: #222;
+}
+
+.status_flag .paid:before {
+  content: "●";
+  padding-right: 5px;
+  color: #82CECB;
+}
+
+.status_flag .unpaid {
+  color: #e6002d;
+}
+
+.status_flag .unpaid:before {
+  content: "●";
+  padding-right: 5px;
+  color: #e6002d;
+}
+
+.status_flag .paid {
+  color: #222;
+}
+
+.status_flag .confirm:before {
+  content: "●";
+  padding-right: 5px;
+  color: #C4D955;
+}
+
+/* 支払い状況フラグ end*/
+
+/* 支払い状況end */
+
+
+/* 支払い状況詳細 */
+
+.home table .payment_status {
+  margin: 10px 0 30px 0;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+table.payment_status {
+  margin-bottom: 30px;
+}
+
+.home table.payment_status tr {
+  line-height: 32px;
+}
+
+.home table.payment_status tr td:nth-child(1) {
+  padding-left: 10px;
+  width: 30%;
+}
+
+
+/* サービスフラグ */
+
+.service_flag {
+  width: 30%;
+  font-size: 12px;
+  line-height: normal;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 5px 10px;
+  line-height: initial;
+  float: right;
+}
+
+.home table .service_flag i {
+  color: #d02d36;
+  margin-right: 5px;
+  font-size: 16px;
+  position: unset;
+  left: unset;
+  top: unset;
+}
+
+/* サービスフラグ end*/
+
+/* 支払い状況詳細　end */
+
+/* 契約情報 */
+
+.info-area {
+  padding: 20px 0 50px;
+}
+
+.info-area.info1 {
+  padding: 80px 0 50px;
+  border-top: 2px solid #cccccc;
+}
+
+.h2-border.info-border1 {
+  top: -3px;
+}
+
+.h2-border.info-border2 {
+  top: -3px;
+}
+
+.info-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.info-area dl {
+  overflow: hidden;
+  margin: 30px 0 50px 0;
+}
+
+.info-area dl dt {
+  float: left;
+  clear: both;
+  padding: 10px 0 20px;
+  margin: 10px 0;
+  width: 30%;
+  border-bottom: 1px solid #cccccc;
+  font-weight: bold;
+  height: 60px;
+}
+
+.info-area dl dd {
+  float: right;
+  width: 70%;
+  padding: 10px 0 20px 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #cccccc;
+  height: 60px;
+}
+
+/* メアド変更 */
+.mail-form-area {
+  height: 390px;
+}
+
+/* フッター */
+footer {
+  height: 60px;
+  border-top: 2px solid #cccccc;
+  bottom: 0;
+  width: 100%;
+  min-width: 600px;
+  margin-top: 40px;
+}
+
+footer p {
+  text-align: center;
+  padding: 20px 0;
+  color: #e6e6e6;
+}
+
+.pagetop_btn {
+  position: fixed;
+  flex-direction: column;
+  right: 50px;
+  bottom: 120px;
+  width: 40px;
+  height: 40px;
+  background-color: #cccccc;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.pagetop_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: #333 2px solid;
+  border-left: #333 2px solid;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.pagetop_btn:hover::after {
+  top: 46%;
+}
+
+/* モーダル */
+.confirm-area {
+  width: 100%;
+  height: 100%;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+}
+
+.confirm-area a {
+  text-align: center;
+  display: block;
+}
+
+.confirm-area form {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+
+/* .confirm-area label {
+  display: grid;
+} */
+
+.confirm-area label input {
+  background-color: #fff;
+  border: none;
+  height: 50px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.confirm-area button {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 500px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.confirm-area button:hover {
+  opacity: 0.8;
+}
+
+.confirm-area button img {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.confirm-area select {
+  background-color: #fff;
+  border: none;
+  height: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.confirm-area a.contact {
+  margin-top: 10px;
+  text-align: right;
+  text-decoration: underline;
+}
+
+button.confirm {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  text-align: center;
+}
+
+/* 1003 修正 */
+
+/* .payment_method {
+  padding: 30px 0;
+}
+
+.payment_method .title {
+  font-size: 2rem;
+  left: 0;
+  margin-bottom: 30px;
+} */
+
+/* 1003 修正 end */
+
+button.option-close-btn {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+button.option-disable-btn {
+  border: none;
+  background-color: #696969;
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+button.option-close-btn:hover {
+  opacity: 0.8;
+}
+
+form.close_reason {
+  max-width: 700;
+}
+
+label.close_reason_item {
+  white-space: nowrap;
+}
+
+input.option_close_btn {
+  border: none;
+  background-color: #e6002d;
+  color: #fff;
+  width: 300px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.option_close_submit {
+  text-align: center;
+}
+
+.option_close_textarea {
+  width: 100%;
+}
+
+.payment_method {
+  padding: 30px 0;
+  text-align: center;
+}
+
+
+.payment_method .title {
+  font-size: 2rem;
+  left: 0;
+  margin-bottom: 30px;
+}
+
+/* 1003 */
+
+.payment_method .title p {
+  line-height: 5rem;
+}
+
+/* 1003 end*/
+
+.payment_top {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.payment_top a {
+  display: block;
+  color: #211816;
+  font-size: 1.5rem;
+  border: 1px solid #cccccc;
+  padding: 18px 30px;
+  border-radius: 3px;
+  transition: .3s;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.payment_top a:hover {
+  background: #e6e6e6;
+}
+
+.payment_top p i {
+  padding: 0 10px 10px 10px;
+  font-size: 2.8rem;
+  color: #d02d36;
+}
+
+.homecp p {
+  font-size: 1.3rem;
+}
+
+.goannai {
+  margin-top: 60px;
+}
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.bnbox {
+  text-align: center;
+  width: 48%;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+.bnbox a {
+  font-size: 95%;
+}
+
+.banner a:hover {
+  opacity: 0.8;
+}
+
+.nopc {
+  display: none;
+}
+
+.text_r {
+  float: right;
+  text-align: right;
+}
+
+.border_link {
+  border-bottom: 1px solid #696969;
+}
+
+/*----- 解約進捗フラグ -----*/
+
+.procedure_red {
+  background-color: #d02d36;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.procedure_blue {
+  background-color: #3e7bd6;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.procedure_black {
+  background-color: #222;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.section.data_request {
+  margin-bottom: 30px;
+  color: #e6002d;
+}
+
+/*----- 解約進捗フラグ end -----*/
+
+/*----- 1003 配達日変更 -----*/
+
+.home table.home_delivery {
+  margin: 10px 0 10px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.home table.home_delivery .amount {
+  vertical-align: middle;
+  text-align: right;
+}
+
+.home table.home_delivery tr th:nth-child(1) {
+  background-color: #e6e6e6;
+  width: 35%;
+  border-right: none;
+}
+
+.home_delivery p {
+  text-align: right;
+}
+
+.warning_box {
+  margin-bottom: 40px;
+}
+
+p.warning {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+p.warning span {
+  color: #d02d36;
+}
+
+i.fa-solid.fa-angle-right {
+  display: contents;
+}
+
+a.change_date {
+  font-size: 1.4rem;
+  color: #d02d36;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.fa-angle-right:before {
+  content: "\f105";
+  font-size: 1.4rem;
+}
+
+/*----- 1003 配達日変更 end -----*/
+
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 300px;
+  }
+
+  header {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  header p {
+    right: 20px;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .burger.open {
+    left: 85%;
+  }
+
+  .l-main {
+    width: 90%;
+    min-width: 300px;
+    margin-bottom: 120px;
+  }
+
+  .l-main.login {
+    text-align: center;
+  }
+
+  .l-main.login {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .l-main .login img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  button {
+    font-size: 1.4rem;
+  }
+
+  /* ログイン */
+  .form-area form {
+    width: 80%;
+  }
+
+  .form-area button {
+    width: 100%;
+  }
+
+  .confirm-area form {
+    width: 90%;
+  }
+
+  .confirm-area button {
+    width: 100%;
+  }
+
+  .input-field.input-field-link.faq {
+    width: 100%;
+  }
+
+  .input-field.short {
+    width: 100%;
+  }
+
+  .input-field.short2 {
+    width: 100%;
+  }
+
+  .input-field.input-field-link.reminder {
+    border-radius: 40px;
+    height: auto;
+  }
+
+  .input-field.input-field-link.reminder p {
+    line-height: 24px;
+    height: auto;
+    padding: 10px;
+  }
+
+  /* ホーム */
+
+  /* .home-use {
+    display: block;
+  } */
+
+  .in {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .home-use #month,
+  .home-use #money {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    font-size: 2rem;
+    margin: 30px 10px;
+  }
+
+  .home-use .link-btn {
+    text-align: center;
+  }
+
+
+  .home table tr td .t_flex {
+    display: block;
+    text-align: right;
+  }
+
+  .home table i {
+    top: 40%;
+  }
+
+  .home table.home_total tr th:nth-child(1) {
+    width: 45%;
+  }
+
+  .news-pc {
+    display: none;
+  }
+
+  .news-sp {
+    display: block;
+    width: 90%;
+    margin: 100px auto;
+    min-width: 300px;
+    border-top: 2.5px solid #cccccc;
+    position: relative;
+  }
+
+  .h2-border-home2 {
+    position: absolute;
+    border-bottom: 2.5px solid #e6002d;
+    top: -3px;
+    width: 20%;
+    z-index: 5;
+  }
+
+  .news-area {
+    background-color: #fff;
+    display: contents;
+  }
+
+  .news-area-ttl {
+    display: table;
+    width: 100%;
+  }
+
+  .news-area p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .news-link {
+    border: none;
+    display: table-cell;
+    text-align: right;
+    padding-right: 0;
+    color: #696969;
+  }
+
+  .news-area li {
+    font-size: 1.5rem;
+    line-height: 22px;
+    font-weight: bold;
+    color: #696969;
+  }
+
+  .news-area li a {
+    width: 100%;
+    color: #696969;
+  }
+
+  /* ホーム詳細 */
+
+  .detail {
+    display: block;
+    position: relative;
+  }
+
+  .detail-area {
+    width: 100%;
+  }
+
+  .detail-area-1,
+  .detail-area-2 {
+    margin-right: 0;
+  }
+
+  .detail-area-2 {
+    margin-top: 80px;
+  }
+
+  /* 修正 */
+  .l-main .h2-border.h2-border-detail {
+    top: -1px;
+    width: 20%;
+  }
+
+  .l-main .h2-border.detail-border1 {
+    top: -12px;
+    left: 0;
+    width: 20%;
+  }
+
+  /* 使用量 */
+  .use1 {
+    width: 100%;
+  }
+
+  .graph-area {
+    width: 100%;
+    margin: 30px 0;
+    float: none;
+  }
+
+  /* .l-main .h2-border.use-border2 {
+      top: 1098px;
+    }
+    .l-main .h2-border.use-border3 {
+      top: 1722px;
+    } */
+
+  .use2 table {
+    width: 100%;
+  }
+
+  .use2 thead th {
+    padding: 0 0 0 10px;
+  }
+
+  .use2 tbody td {
+    padding: 0 0 0 10px;
+  }
+
+  .use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+    width: 45%;
+    margin: 30px 2%;
+  }
+
+  .link-btn.link-btn-detail {
+    display: block;
+    text-align: center;
+  }
+
+  .use3 .link-btn {
+    margin-top: 10px;
+  }
+
+  /* 支払い状況 */
+
+  .status-plan {
+    display: block;
+  }
+
+  .status-area .use1 {
+    width: 100%;
+    margin: 30px 0 0;
+  }
+
+  .status_month .status_detail .amount {
+    width: 100%;
+    padding-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  /* 支払い状況 end */
+
+  /* 支払い状況詳細 */
+  .home table.payment_status tr td:nth-child(1) {
+    width: 40%;
+  }
+
+  .home table.payment_status tr td.contract {
+    line-height: 20px;
+  }
+
+  /* サービスフラグ */
+  .service_flag {
+    width: 70%;
+    float: unset;
+    margin-top: 10px;
+  }
+
+  /* サービスフラグ */
+  /* 支払い状況 end */
+
+  /* 契約情報 */
+  .info-area dl {
+    font-size: 1.3rem;
+  }
+
+  /* .h2-border.info-border1 {
+      top: 690px;
+    }
+    .h2-border.info-border2 {
+      top: 1175px;
+    } */
+
+  footer {
+    position: relative;
+    min-width: 300px;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+
+  .pagetop_btn {
+    right: 10px;
+  }
+
+  .banner {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .bnbox {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .nosp {
+    display: none;
+  }
+
+  .nopc {
+    display: block;
+  }
+
+  button.option-close-btn {
+    border: none;
+    background-color: #e6002d;
+    color: #fff;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    border-radius: 3px;
+    float: right;
+  }
+
+  button.option-disable-btn {
+    border: none;
+    background-color: #696969;
+    color: #fff;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    border-radius: 3px;
+    float: right;
+  }
+
+  /* 1003 */
+  .home table.home_delivery tr th:nth-child(1) {
+    background-color: #e6e6e6;
+    width: 45%;
+    border-right: none;
+  }
+
+  /* 1003 end */
+}

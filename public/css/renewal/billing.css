@@ -1,0 +1,569 @@
+/* =============================================
+ *
+ * 請求詳細画面 CSS
+ *
+ * =========================================== */
+
+
+/* 請求額詳細
+====================================================*/
+h2.h2-detail {
+  border: none;
+}
+
+h2.h2-detail img {
+  width: 30px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.l-main .h2-border.h2-border-detail {
+  top: -1px;
+  width: 10%;
+}
+
+.l-main .h2-border.detail-border1 {
+  top: -3px;
+  left: 0;
+}
+
+/* 修正 */
+.detail {
+  display: flex;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.detail-area {
+  width: 47.5%;
+  border-top: 2px solid #cccccc;
+  padding-top: 20px;
+  position: relative;
+}
+
+.detail-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.detail-area-1,
+.detail-area-2 {
+  margin-right: 2.5%;
+}
+
+.detail-area dl {
+  overflow: hidden;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-area dl dt {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  border-bottom: 1px solid #cccccc;
+  font-weight: bold;
+}
+
+.detail-area dl dd {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 60px;
+  /* padding: 25px 0 0px; */
+  border-bottom: 1px solid #cccccc;
+}
+
+.link-btn.link-btn-detail {
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* .link-btn.link-btn-detail button img {
+  margin-left: 45px;
+} */
+
+
+
+/* 使用量・請求金額
+====================================================*/
+
+.cp_ipselect {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 2rem 0 0;
+  text-align: center;
+}
+
+#supplypoint_code {
+  height: 40px;
+}
+
+.cp_ipselect select {
+  width: 100%;
+  height: 40px;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.5rem;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl02 {
+  position: relative;
+  /* border: 1px solid #cccccc;
+  border-radius: 5px; */
+  background: #fff;
+}
+
+.cp_ipselect.cp_sl02::before {
+  position: absolute;
+  top: 50%;
+  right: 0.7em;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  content: "";
+  border-bottom: #333 2px solid;
+  border-right: #333 2px solid;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cp_ipselect.cp_sl02:after {
+  position: absolute;
+  pointer-events: none;
+  width: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* width: 1px; */
+  content: "";
+  /* border-left: 1px solid #cccccc; */
+  border-radius: 0 5px 5px 0;
+  background-color: #cccccc;
+}
+
+.cp_ipselect.cp_sl02 select {
+  padding: 8px 38px 8px 8px;
+  color: #333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.use-area {
+  margin-bottom: 60px;
+}
+
+.use-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+/* .use1 {
+  width: 47.5%;
+  margin: 30px 0;
+  display: inline-block;
+} */
+
+.use1 {
+  width: 47.5%;
+}
+
+.use2,
+.use3 {
+  padding-top: 30px;
+  margin-top: 70px;
+  border-top: 2.5px solid #cccccc;
+  position: relative;
+}
+
+.use-plan {
+  width: 100%;
+}
+
+.use-result {
+  width: 100%;
+  display: flex;
+}
+
+.use-result .result-name {
+  margin: auto 10px auto 0;
+}
+
+#get_contract_name,
+#get_plan {
+  margin-left: 7px;
+  font-size: 1.5rem;
+}
+
+.use-area .use1 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use4 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use-area .use5 {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.use-area .use5 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.use1 .auto1,
+.use1 .auto2 {
+  height: 40px;
+  border-radius: 5px;
+  padding: 13px 0 8px 0;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.result-ym {
+  width: 40%;
+}
+
+.result-user {
+  margin: auto 0;
+}
+
+/* .graph-area {
+  width: 50%;
+  height: 340px;
+  float: right;
+  margin: 30px 0;
+} */
+
+.graph-area {
+  width: 100%;
+  height: 340px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+canvas#myBarChart {
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+
+.l-main .h2-border.use-border2 {
+  top: -3px;
+}
+
+.l-main .h2-border.use-border3 {
+  top: -3px;
+}
+
+.use2 .link-btn.link-btn-detail a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.use2 .table-area {
+  margin-top: 20px;
+  width: 100%;
+  height: 360px;
+  overflow-y: auto;
+  border: 1px solid #cccccc;
+}
+
+.use2 table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.use2 thead th {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 2px solid #cccccc;
+  vertical-align: middle;
+  padding: 0 0 0 40px;
+  width: 25%;
+}
+
+.use2 table tr {
+  height: 60px;
+}
+
+.use2 table td {
+  vertical-align: middle;
+  padding: 0 0 0 40px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.use2 table td.date {
+  font-size: 1.3rem;
+}
+
+.use2 table td.en {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.use2 table button {
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.use2 table button:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.plan-btn button {
+  display: block;
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.plan-btn button:hover {
+  color: #fff;
+  border: 1px solid #e6002d;
+  background-color: #e6002d;
+}
+
+.use-area table button {
+  vertical-align: middle;
+  padding: 5px 10px;
+  color: #e6002d;
+  border: 1px solid #e6002d;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.use-area table button:hover {
+  color: #fff;
+  background-color: #e6002d;
+  border: #e6002d;
+}
+
+.use-area .cp_ipselect.cp_sl02.cp_ipselect.short {
+  width: 25%;
+  margin-right: 20px;
+}
+
+.use3 div,
+.use3.link-btn.link-btn-detail {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.use-area .use3 .cp_ipselect.cp_sl02 {
+  margin: 50px 0;
+}
+
+
+/* お支払い状況
+====================================================*/
+
+.home-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.status-area {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.status-area p {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p.comment {
+  font-weight: normal;
+  font-size: 100%;
+  padding: 10px 0;
+}
+
+.status-plan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-area .use1 {
+  width: 47.5%;
+  margin: 30px 0 0;
+}
+
+.status-area .use1 .cp_ipselect.cp_sl02 {
+  margin: 10px 0 20px 0;
+}
+
+.status_month {
+  margin: 10px 0 30px 0;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  border: 1px solid #cccccc;
+}
+
+.status_month .title_month {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+
+.status_month .status_detail {
+  padding: 10px;
+}
+
+.status_month .status_detail ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.status_month .status_detail ul li {
+  display: flex;
+}
+
+.status_month .status_detail ul li p:first-child {
+  padding-right: 10px;
+}
+
+.status_month .status_detail .amount {
+  font-weight: 600;
+  border-bottom: 1px solid #222;
+}
+
+.status_month .status_detail .price {
+  padding-left: 20px;
+}
+
+.status_detail .link-btn {
+  text-align: right;
+}
+
+.status_detail .link-btn button {
+  width: 100px;
+  padding-right: 15px;
+}
+
+
+
+/* --- 支払い状況フラグ --- */
+.status_flag {
+  font-size: 12px;
+  text-align: center;
+  line-height: normal;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 5px 10px;
+  line-height: initial;
+}
+
+.status_flag .paid {
+  color: #222;
+}
+
+.status_flag .paid:before {
+  content: "●";
+  padding-right: 5px;
+  color: #82CECB;
+}
+
+.status_flag .unpaid {
+  color: #e6002d;
+}
+
+.status_flag .unpaid:before {
+  content: "●";
+  padding-right: 5px;
+  color: #e6002d;
+}
+
+.status_flag .paid {
+  color: #222;
+}
+
+.status_flag .confirm:before {
+  content: "●";
+  padding-right: 5px;
+  color: #C4D955;
+}
+
+
+/* 支払い状況詳細
+====================================================*/
+.home table .payment_status {
+  margin: 10px 0 30px 0;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+table.payment_status {
+  margin-bottom: 30px;
+}
+
+.home table.payment_status tr {
+  line-height: 32px;
+}
+
+.home table.payment_status tr td:nth-child(1) {
+  padding-left: 10px;
+  width: 30%;
+}
+
+
+/* --- サービスフラグ --- */
+.service_flag {
+  width: 30%;
+  font-size: 12px;
+  line-height: normal;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 5px 10px;
+  line-height: initial;
+  float: right;
+}
+
+.home table .service_flag i {
+  color: #d02d36;
+  margin-right: 5px;
+  font-size: 16px;
+  position: unset;
+  left: unset;
+  top: unset;
+}
+
+
+
